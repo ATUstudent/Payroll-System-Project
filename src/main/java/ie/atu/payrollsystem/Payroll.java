@@ -17,5 +17,9 @@ public class Payroll {
     @Positive
     @DecimalMin("0.5")
     private double Salary;
+    private String department;
+    @NotBlank
+    @Size(min = 2, max = 100)
+    private String departmentName;
 
 }
