@@ -10,4 +10,23 @@ import java.util.List;
 
 public class PayrollController {
 
+    List<Payroll> myList = new ArrayList<>();
+
+    @GetMapping("/login")
+    public String Login() {
+        return "login";
+    }
+
+    @GetMapping("/getPayroll")
+    public List<Payroll> getProduct() {
+       Payroll myPayroll = new Payroll("Name", 68000);
+        return myList;
+    }
+
+    @PostMapping("/addPayroll")
+    public Payroll addPayroll(@Valid @RequestBody Payroll myPayroll) {
+        myList.add(myPayroll);
+        return myPayroll;
+    }
+
 }
